@@ -47,6 +47,7 @@
 				<a class="nav-item nav-link" href="https://www.linkedin.com/in/satyaki-roy-b8a7a2109/">LinkedIn</a>
 				<a class="nav-item nav-link" href="{% static 'Satyaki_Roy_resume.pdf' %}">Resume</a>
 				<a class="nav-item nav-link" href="{% url 'allblogs' %}">Blog</a>
+				<a class="nav-item nav-link" href="#">Admin</a>
 			</div>
 		</div>
 	</nav>
@@ -63,11 +64,13 @@
 			<p>
 				<a href="mailto:satyakiroy001@gmail.com" class="btn btn-primary my-2">Email Me</a>
 			</p>
-			<img class="rounded" src="{% static 'my_pic.jpg' %}">
+			<img class="rounded" src="{% static 'my_pic.jpg' %}" height="250" width="250">
 		</div>
 	</section>
 
-	<div class="album py-5">
+	<h3 class="text-center">Work Experiance</h3>
+
+	<div class="album py-4">
 		<div class="container">
 
 			<div class="row">
@@ -75,8 +78,9 @@
 				{% for job in jobs.all %}
 				<div class="col-md-4">
 					<div class="card mb-4 shadow-sm">
-						<img class="rounded card-img-top" src="{{ job.image.url }}" />
+						<img class="rounded card-img-top" src="{{ job.image.url }}" height="285" />
 						<div class="card-body">
+							<h4>{{ job.heading }}</h4>
 							<p class="card-text">{{ job.summary }}</p>
 						</div>
 					</div>
